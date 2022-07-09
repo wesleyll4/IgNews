@@ -1,0 +1,67 @@
+.headerContainer {
+  height: 5rem;
+  border-bottom: 1px solid var(--gray-800);
+}
+
+.headerContent {
+  max-width: 1120px;
+  height: 5rem;
+  
+  margin: 0 auto;
+
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+
+  nav {
+    margin-left: 5rem;
+    height: 5rem;
+
+    a {
+      display: inline-block; // Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element. Also, the top and bottom margins/paddings are respected, but with display: inline they are not. And compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+      position: relative;
+
+      padding: 0 0.5rem;
+
+      height: 5rem;
+      line-height: 5rem; // the tag "a" will occupy the height of the entire "header", and that way the text of that tag will always be centered. If I put "line-height" in the same size as the "height", the text will always be in the center.
+
+      color: var(--gray-300);
+
+      transition: color 0.2s;
+
+      & + a {
+        margin-left: 2rem;
+      }
+
+      &:hover {
+        color: var(--white);
+      }
+
+      &.active {
+        color: var(--white);
+        font-weight: bold;
+      }
+
+      &.active::after { // the "::after" element is after the contents of the tag before closing it. If the tag is "a" and its content is "Home" for example, if you style the "::after" element, it will put something after the "Home" content. If it is "::before", it will have the same behavior, but before the content of the tag.
+        content: '';
+
+        width: 100%;
+        height: 3px;
+
+        border-radius: 3px 3px 0 0;
+
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+
+        background: var(--yellow-500);
+      }
+    }
+  }
+
+  button { 
+    margin-left: auto; // when applying "auto" margin on either side, it will try to give as much margin as it can/as possible
+  }
+}

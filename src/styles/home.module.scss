@@ -1,0 +1,49 @@
+.contentContainer {
+  max-width: 1120px;
+  height: calc(100vh - 5rem); // this way the height will be the total height of the screen - 5rem (which is the height of the component 'header'), with this allows you to center the elements vertically on the screen decounting the height of the 'header'
+  
+  margin: 0 auto;
+  
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero {
+  max-width: 600px;
+
+  > span { // this way it will apply this style only to the 'span' that is directly within the parent element (.hero), i.e. the first 'span' that finds/'span' only one level within it
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    font-weight: 900;
+
+    margin-top: 2.5rem;
+
+    span {
+      color: var(--cyan-500);
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+
+    margin-top: 1.5rem;
+
+    span {
+      color: var(--cyan-500);
+      font-weight: bold;
+    }
+  }
+
+  button {
+    margin-top: 2.5rem;
+  }
+}

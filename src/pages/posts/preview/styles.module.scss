@@ -1,0 +1,78 @@
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.post {
+  max-width: 720px;
+  margin: 5rem auto 0;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+  }
+
+  time {
+    display: block; // by default the 'time' tag has 'display: inline', so stylizations of margin, padding, etc. would not work, so the need to switch to 'display: block'
+
+    font-size: 1rem;
+
+    color: var(--gray-300);
+
+    margin-top: 1.5rem;
+  }
+
+  .content {
+    margin-top: 2rem;
+    line-height: 2rem;
+
+    font-size: 1.125rem;
+
+    color: var(--gray-100);
+
+    p, ul {
+      margin: 1.5rem 0;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+
+      li {
+        margin: 0.5rem 0;
+      }
+    }
+
+    &.previewContent {
+      background: linear-gradient(var(--gray-100), transparent);
+      background-clip: text; // the 'background-clip: text' tag causes the background that is applied to the element behaves like the background of the text
+
+      -webkit-text-fill-color: transparent; // when you do the gradient in the text it is recommended to use this option
+    }
+  }
+}
+
+.continueReading {
+  padding: 2rem;
+  margin: 4rem 0 2rem;
+
+  border-radius: 100px;
+  
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  text-align: center;
+  
+  background: var(--gray-850);
+
+  a {
+    color: var(--yellow-500);
+    
+    margin-left: 0.5rem;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
