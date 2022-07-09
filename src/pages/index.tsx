@@ -21,7 +21,7 @@ export default function Home({ product }: HomeProps) {
       <Head>
         <title>Home | ig.news</title>
       </Head>
-      
+
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <span>👏 Hey, welcome</span>
@@ -41,15 +41,15 @@ export default function Home({ product }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const price = await stripe.prices.retrieve('price_1KPUbxEa9DWIVKt7gEVdINnK')
-  
+  const price = await stripe.prices.retrieve('price_1L4r08BzMWLlJwi78f4EsRsP')
+
   const product = {
     priceId: price.id,
     amount: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
     }).format(price.unit_amount / 100), // prices are usually saved in cents in the databases, so the need to divide by 100
-  } 
+  }
 
   return {
     props: {
@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-// 3 main ways to make an api call in React/Next.js 
+// 3 main ways to make an api call in React/Next.js
 
 // Client-side/Single-page Application (SPA) -> page that needs information that is loaded with some user action and not necessarily when the page is loaded/information that sometimes has no need to already be there when the page is loaded or that do not need indexing/SEO
 // Server-side (SSR) -> page that need dynamic user session data/real-time information from the user who is accessing, from the context of the request, and who need indexing/SEO
